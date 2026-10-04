@@ -22,6 +22,16 @@ filebeat.autodiscover:
       templates:
         - condition:
             contains:
+              docker.container.image: *
+          config:
+            - module: any
+              server:
+                input:
+                  type: container
+                  paths:
+                    - /var/lib/docker/containers/${data.container.id}/*-json.log
+        - condition:
+            contains:
               docker.container.image: elasticsearch
           config:
             - module: elasticsearch
