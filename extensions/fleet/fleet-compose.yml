@@ -40,6 +40,7 @@ services:
     depends_on:
       - elasticsearch
       - kibana
+    restart: unless-stopped
 
 volumes:
   fleet-server:

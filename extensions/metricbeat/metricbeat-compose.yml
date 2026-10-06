@@ -51,3 +51,4 @@ services:
       - elk
     depends_on:
       - elasticsearch
+    restart: unless-stopped
