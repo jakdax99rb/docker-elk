@@ -24,7 +24,7 @@ monitoring:
     password: ${BEATS_SYSTEM_PASSWORD}
 
 output.elasticsearch:
-  hosts: [ "${ELASTIC_HOST}" ]
+  proxy_url: "${ELASTIC_HOST}" 
   username: filebeat_internal
   password: ${FILEBEAT_INTERNAL_PASSWORD}
 
